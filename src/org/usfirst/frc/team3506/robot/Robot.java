@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team3506.robot.commands.ExampleCommand;
 import org.usfirst.frc.team3506.robot.subsystems.DriveTrainSubsystem;
 import org.usfirst.frc.team3506.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team3506.robot.subsystems.FiringMotorSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,6 +22,7 @@ public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static DriveTrainSubsystem driveTrainSubsystem; 
+	public static FiringMotorSubsystem firingMotorSubsystem;
 	public static OI oi;
 
     Command autonomousCommand;
@@ -31,6 +33,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		driveTrainSubsystem = new DriveTrainSubsystem();
+		firingMotorSubsystem = new FiringMotorSubsystem();
     	oi = new OI();
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();

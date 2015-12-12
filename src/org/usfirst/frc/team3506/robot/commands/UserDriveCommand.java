@@ -12,6 +12,7 @@ public class UserDriveCommand extends Command {
 
 	public UserDriveCommand() {
 		requires(Robot.driveTrainSubsystem);
+		requires(Robot.firingMotorSubsystem);
 	}
 
 	// Called just before this Command runs the first time
@@ -20,6 +21,7 @@ public class UserDriveCommand extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
+		Robot.firingMotorSubsystem.setSpeed(OI.leftJoystick.getRawAxis(2));
 		Robot.driveTrainSubsystem.drive(OI.leftJoystick.getY(),
 				OI.rightJoystick.getY());
 	}
